@@ -1,4 +1,4 @@
-# Week 1: Installing Go + "Hello World+"
+# Exercise 1: Installing Go + "Hello World+"
 
 Welcome to CS351! In this in-class exercise we will set up Go and play around with writing a few simple programs.
 
@@ -26,7 +26,7 @@ the command line to run your programs.
 
 ## Your First Go Program
 
-Create a new file called `week1.go`.
+Create a new file called `hello.go`.
 
 As is tradition with a new language, let's first say "Hello!".
 
@@ -47,8 +47,8 @@ func main() {
 }
 ```
 
-Copy the above program into `week1.go` and run the command:
-```go run week1.go```
+Copy the above program into `hello.go` and run the command:
+```go run hello.go```
 
 You should see the output:
 ```
@@ -81,7 +81,7 @@ You can redirect output via the `>` character.
 
 Now run:
 ```
-go run week1.go > output.txt
+go run hello.go > output.txt
 ```
 
 Open the output.txt file, what is contained in the file?
@@ -99,7 +99,7 @@ Read the pages (2-3 minutes each):
 - https://gobyexample.com/strings-and-runes
 
 
-Copy the following line into the main function of your `week1.go` program.
+Copy the following line into the main function of your `hello.go` program.
 This line initializes and assigns a new variable `input` to hold a long string.
 ```
 input := "There once was a cat named Barry. He was a very good cat. This cat lived in Boston. He loved doing Boston-related activities (that were good for cats). He walked the esplanade. He shopped on Newbury. He ate at Tatte. He sometimes even went to TD Garden. Did you know that cats are not allowed in TD Garden?"
@@ -152,7 +152,7 @@ found cat @ 4227760
 
 Let's move our word-searching code into a helper function. 
 
-Copy over the function header into `week1.go` and move your logic that opens a file into this helper.
+Copy over the function header into `hello.go` and move your logic that opens a file into this helper.
 ```
 func searchForWord(filepath string, target string) {
     // implementation here
