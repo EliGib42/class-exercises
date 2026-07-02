@@ -223,7 +223,8 @@ Now, what happens if we have several clients making moves at the same time? Will
 >   - (i.e. if BLACK was the last color to move, we should only accept MOVE requests for the color WHITE).
 > - If a move comes in that is for the wrong color, **return an error**.
  
-
+Hint: You can use the `errors` package to throw custom errors in your RPC function body in `server.go`:
+```return errors.New("Turn Order Violation")```
 
 Now, let's implement the following test in `concurrent.go` to check that double-same-color moves are prohibited:
 
@@ -293,6 +294,8 @@ Thus, to fix our test, we need to use concurrency control!
 
 Let's use *channels* to ensure that we get 10 responses from our other threads before we send a move for BLACK.
 
+Change `concurrent.go` to the following code. Fill in the correct lines to send/receive on channel `ch`. 
+
 ```golang
 func main() {
 	client, err := rpc.DialHTTP("tcp", "localhost:1234")
@@ -328,8 +331,6 @@ func main() {
     }
 }
 ```
-
-Modify the above code to use channels for concurrency control.
 
 Now, re-run your code with log.Print statements and check, does the BLACK move always appear last?
 
