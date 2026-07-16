@@ -183,7 +183,9 @@ You can format your report how you like, however, a suggestion is below:
 
 ## Testing
 
-To test your code, populate the servers list with the ip addresses of the other students in your group.
+To test your code:
+1. populate the `peer_addresses` with the ip addresses of the other students in your group.
+2. Run your code with `go run server.go`. Make sure all the other students are also running their servers!
 
 ### Finding your IP address
 Find the ip address of your current machine.
